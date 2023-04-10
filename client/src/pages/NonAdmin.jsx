@@ -30,7 +30,7 @@ const MoreDetails = () => {
 
   useEffect(() => {
     getByName();
-  }, []);
+  }, [getByName]);
   return (
     <>
       <Heading textAlign={"center"} size="sm" my="30px">

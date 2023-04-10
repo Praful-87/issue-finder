@@ -18,6 +18,7 @@ import { getData } from "../utils/getData";
 import { Link } from "react-router-dom";
 
 const Admin = () => {
+  
   const [data, setData] = useState([]);
 
   async function fetChData() {
@@ -27,7 +28,7 @@ const Admin = () => {
 
   useEffect(() => {
     fetChData();
-  }, []);
+  }, [fetChData]);
   return (
     <Box>
       <Tabs size="md" isFitted variant="enclosed" mt={4}>
