@@ -1,11 +1,7 @@
 import {
-  Box,
   Button,
   Container,
-  FormLabel,
-  Input,
-  Select,
-  Text,
+  FormLabel,Select
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";

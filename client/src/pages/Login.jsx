@@ -30,11 +30,17 @@ import { url } from "../utils/url";
 
 const Login = () => {
   const toast = useToast();
+
   const navigate = useNavigate();
+
   const [show, setShow] = useState(false);
+
   const [loading, setLoading] = useState(false);
+
   const handleClick = () => setShow(!show);
+
   const Username = useRef(null);
+  
   const Password = useRef(null);
   const Type = useRef(null);
   async function handelSubmit() {

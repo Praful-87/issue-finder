@@ -49,7 +49,7 @@ const Register = () => {
         type,
       };
       try {
-        let res = await axios.post(`${url}/user/register`, payload);
+        await axios.post(`${url}/user/register`, payload);
         toast({
           title: "Registerd",
           status: "success",
@@ -59,7 +59,7 @@ const Register = () => {
           position: "top",
         });
         setLoading(false);
-        navigate("/login");
+        navigate("/");
       } catch (error) {
         console.log(error.response.data);
         setLoading(false);

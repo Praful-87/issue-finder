@@ -1,12 +1,8 @@
 import React from "react";
 import {
   Box,
-  Button,
-  Container,
   FormLabel,
-  Input,
   Link,
-  Select,
   Text,
 } from "@chakra-ui/react";
 import Detatil from "./Detatil";
@@ -46,7 +42,7 @@ const UserForm = ({ data }) => {
           </FormLabel>
           {/* <Detatil value={data.date} /> */}
           <Link color={'blue'} to={data.document}>
-            <a href={data.document} target="_blank">
+            <a rel="noreferrer" href={data.document} target="_blank">
               Open Document
             </a>
           </Link>

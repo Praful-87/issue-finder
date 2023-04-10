@@ -5,7 +5,6 @@ import {
   FormLabel,
   Input,
   Select,
-  Text,
 } from "@chakra-ui/react";
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";

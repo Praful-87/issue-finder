@@ -2,58 +2,29 @@ import {
   Box,
   Button,
   Center,
-  Collapse,
-  Select,
-  useDisclosure,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalFooter,
-  ModalBody,
-  ModalCloseButton,
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
   TableContainer,
-  FormControl,
-  FormLabel,
-  Input,
-  Menu,
-  MenuItem,
-  MenuButton,
-  MenuList,
   Text,
 } from "@chakra-ui/react";
 
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect,  useState } from "react";
 import { getData } from "../utils/getData";
-import { updater } from "../utils/updater";
 import { Link } from "react-router-dom";
 
 const Admin = () => {
   const [data, setData] = useState([]);
-  const newPerson = useRef(null);
-  const initialRef = useRef(null);
-  const finalRef = useRef(null);
+
   async function fetChData() {
     let res = await getData();
     setData(res);
   }
-  function handelSubmit(id) {
-    try {
-      // updater(payload, id);
-      // fetChData();
-      console.log(id);
-    } catch (error) {
-      console.log(error.message);
-    }
-  }
+
   useEffect(() => {
     fetChData();
   }, []);
@@ -93,7 +64,11 @@ const Admin = () => {
                             <Td overflowY={"scroll"}>
                               {el.issues.map((el, i) => {
                                 return (
-                                  <Text my='5px' textTransform={"capitalize"} key={i}>
+                                  <Text
+                                    my="5px"
+                                    textTransform={"capitalize"}
+                                    key={i}
+                                  >
                                     {el}
                                   </Text>
                                 );
@@ -137,10 +112,14 @@ const Admin = () => {
                           <Tr key={el._id}>
                             <Td>{el.allocated_to}</Td>
                             <Td>{el.product_type}</Td>
-                            <Td overflowY={"scroll"} >
+                            <Td overflowY={"scroll"}>
                               {el.issues.map((el, i) => {
                                 return (
-                                  <Text my='5px' textTransform={"capitalize"} key={i}>
+                                  <Text
+                                    my="5px"
+                                    textTransform={"capitalize"}
+                                    key={i}
+                                  >
                                     {el}
                                   </Text>
                                 );
