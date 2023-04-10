@@ -9,16 +9,14 @@ import {
   Th,
   Td,
   TableContainer,
-  Text,
 } from "@chakra-ui/react";
 
 import { Tabs, TabList, TabPanels, Tab, TabPanel } from "@chakra-ui/react";
-import React, { useEffect,  useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getData } from "../utils/getData";
 import { Link } from "react-router-dom";
 
 const Admin = () => {
-  
   const [data, setData] = useState([]);
 
   async function fetChData() {
@@ -62,19 +60,7 @@ const Admin = () => {
                           <Tr my="5px" key={el._id}>
                             <Td>{el.username}</Td>
                             <Td>{el.product_type}</Td>
-                            <Td overflowY={"scroll"}>
-                              {el.issues.map((el, i) => {
-                                return (
-                                  <Text
-                                    my="5px"
-                                    textTransform={"capitalize"}
-                                    key={i}
-                                  >
-                                    {el}
-                                  </Text>
-                                );
-                              })}
-                            </Td>
+                            <Td overflowY={"scroll"}>{el.issues}</Td>
                             <Td>{el.date}</Td>
                             <Td>
                               <Center>
@@ -113,19 +99,7 @@ const Admin = () => {
                           <Tr key={el._id}>
                             <Td>{el.allocated_to}</Td>
                             <Td>{el.product_type}</Td>
-                            <Td overflowY={"scroll"}>
-                              {el.issues.map((el, i) => {
-                                return (
-                                  <Text
-                                    my="5px"
-                                    textTransform={"capitalize"}
-                                    key={i}
-                                  >
-                                    {el}
-                                  </Text>
-                                );
-                              })}
-                            </Td>
+                            <Td overflowY={"scroll"}>{el.issues}</Td>
                             <Td>{el.date}</Td>
                             <Td>{el.status}</Td>
                           </Tr>

@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  Box,
-  FormLabel,
-  Link,
-  Text,
-} from "@chakra-ui/react";
+import { Box, FormLabel, Link, } from "@chakra-ui/react";
 import Detatil from "./Detatil";
 const UserForm = ({ data }) => {
   // console.log(data);
@@ -24,15 +19,7 @@ const UserForm = ({ data }) => {
           <FormLabel fontWeight={"bold"} mt="20px">
             Issue Type
           </FormLabel>
-          <Box rounded={"md"} border="1px dotted gray" py="3" mt="20px">
-            {data.issues.map((el, i) => {
-              return (
-                <Text textTransform={"capitalize"} my="5px" key={i}>
-                  &#9658; {el}
-                </Text>
-              );
-            })}
-          </Box>
+          <Box border='1px dotted gray' p='2' rounded={'md'}>{data.issues}</Box>
           <FormLabel fontWeight={"bold"} mt="20px">
             Date of Submission
           </FormLabel>
@@ -41,7 +28,7 @@ const UserForm = ({ data }) => {
             Document Provided
           </FormLabel>
           {/* <Detatil value={data.date} /> */}
-          <Link color={'blue'} to={data.document}>
+          <Link color={"blue"} to={data.document}>
             <a rel="noreferrer" href={data.document} target="_blank">
               Open Document
             </a>
